@@ -1,0 +1,275 @@
+l<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Walentynka 💖</title>
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffd6e8, #fff5fa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comic Sans MS', cursive;
+    overflow: hidden;
+}
+
+/* Karta z napisem + ramką */
+.card {
+    background: #fff0f5;
+    padding: 60px 70px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 35px 70px rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 5;
+    border: 6px solid #ff99cc; /* ramka */
+    max-width: 700px;
+}
+
+h1 {
+    color: #ff1a75;
+    font-size: 52px; /* powiększony napis */
+    margin: 0;
+    padding: 10px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px #ffa6d1;
+}
+
+h2 {
+    color: #ff4d88;
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+.buttons {
+    margin-top: 40px;
+    position: relative;
+    height: 120px;
+}
+
+button {
+    font-size: 28px;
+    padding: 20px 45px;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yes {
+    background: #ff4d88;
+    color: white;
+}
+
+#yes:hover {
+    transform: scale(1.25);
+}
+
+#no {
+    background: #d9d9d9;
+    position: absolute;
+    left: 55%;
+    top: 0;
+}
+
+/* Komunikat przy NIE */
+.no-text {
+    position: absolute;
+    font-size: 24px;
+    color: #ff4d88;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px #fff;
+    pointer-events: none;
+}
+
+/* CSS Kotki */
+.cat {
+    position: absolute;
+    width: 160px;
+    height: 140px;
+    background: #ffc1dc;
+    border-radius: 50px;
+    animation: bounce 2.5s infinite;
+}
+
+.cat::before,
+.cat::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 50px;
+    background: #ffc1dc;
+    border-radius: 50%;
+    top: -25px;
+}
+
+.cat::before { left: 10px; }
+.cat::after { right: 10px; }
+
+.eyes {
+    position: absolute;
+    top: 40px;
+    left: 35px;
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eye {
+    width: 14px;
+    height: 14px;
+    background: black;
+    border-radius: 50%;
+    animation: blink 4s infinite;
+}
+
+@keyframes blink {
+    0%, 95%, 100% { height: 14px; }
+    96%, 99% { height: 3px; }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+/* SERCA */
+.heart {
+    position: absolute;
+    font-size: 36px;
+    color: #ff4d88;
+    animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-700px); opacity: 0; }
+}
+
+/* GIF KOTKI + BUZIACZKI */
+.gif-cat, .gif-kiss {
+    position: absolute;
+    width: 160px;
+    animation: float 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="card" id="card">
+    <h1>💖 Zostaniesz moją walentynką? 💖</h1>
+    <div class="buttons">
+        <button id="yes">TAK 💕</button>
+        <button id="no">NIE 😿</button>
+    </div>
+</div>
+
+<!-- CSS Kotki -->
+<div class="cat" style="left: 10%; bottom: 10%;">
+    <div class="eyes">
+        <div class="eye"></div><div class="eye"></div>
+    </div>
+</div>
+<div class="cat" style="right: 12%; bottom: 12%; animation-delay: 1s;">
+    <div class="eyes">
+        <div class="eye"></div><div class="eye"></div>
+    </div>
+</div>
+
+<!-- GIF Kotki i buziaczki -->
+<img src="https://tenor.com/view/kitten-hearts-adore-cute-gif-pV2Fw2slQ1l.gif" class="gif-cat" style="left: 10%; top: 60%;" />
+<img src="https://tenor.com/view/cat-hearts-cute-gif-12030080.gif" class="gif-cat" style="left: 70%; top: 20%;" />
+<img src="https://tenor.com/view/cat-hearts-love-petals-kitten-gif-5063715.gif" class="gif-cat" style="left: 40%; top: 10%;" />
+<img src="https://tenor.com/view/cat-heart-cute-kitty-gif-10751194.gif" class="gif-cat" style="left: 20%; top: 30%;" />
+<img src="https://tenor.com/view/heart-cat-cute-kitty-gif-17215321.gif" class="gif-cat" style="left: 60%; top: 50%;" />
+
+<!-- GIF BUZIACZKI -->
+<img src="https://media.tenor.com/Ic1pAyyzEmAAAAAC/kiss-heart.gif" class="gif-kiss" style="left: 15%; top: 15%;" />
+<img src="https://media.tenor.com/Ic1pAyyzEmAAAAAC/kiss-heart.gif" class="gif-kiss" style="left: 50%; top: 25%;" />
+<img src="https://media.tenor.com/Ic1pAyyzEmAAAAAC/kiss-heart.gif" class="gif-kiss" style="left: 80%; top: 40%;" />
+<img src="https://media.tenor.com/Ic1pAyyzEmAAAAAC/kiss-heart.gif" class="gif-kiss" style="left: 30%; top: 50%;" />
+<img src="https://media.tenor.com/Ic1pAyyzEmAAAAAC/kiss-heart.gif" class="gif-kiss" style="left: 70%; top: 60%;" />
+<img src="https://media.tenor.com/Ic1pAyyzEmAAAAAC/kiss-heart.gif" class="gif-kiss" style="left: 20%; top: 70%;" />
+<img src="https://media.tenor.com/Ic1pAyyzEmAAAAAC/kiss-heart.gif" class="gif-kiss" style="left: 60%; top: 80%;" />
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const card = document.getElementById("card");
+
+const noTexts = [
+    "Ej no 😿",
+    "Nie bądź taka 🥺",
+    "Serio? 😭",
+    "Ostatnia szansa!! 💔"
+];
+
+let noCount = 0;
+
+// komunikat nad przyciskiem NIE
+let noTextDiv = document.createElement("div");
+noTextDiv.className = "no-text";
+document.body.appendChild(noTextDiv);
+
+noBtn.addEventListener("mouseenter", () => {
+    const x = Math.random() * (window.innerWidth - 180);
+    const y = Math.random() * (window.innerHeight - 180);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    noTextDiv.innerText = noTexts[noCount % noTexts.length];
+    noTextDiv.style.left = (x + noBtn.offsetWidth/2 - 50) + "px";
+    noTextDiv.style.top = (y - 30) + "px";
+
+    noCount++;
+});
+
+yesBtn.addEventListener("click", () => {
+    card.innerHTML = `
+        <h1>💖 WIEDZIAŁEM!!! 💖</h1>
+        <h2>Kocham Cię najbardziej 🥰🐱💖</h2>
+    `;
+    startHearts();
+    spawnExtraCats();
+});
+
+function startHearts() {
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerText = "💖";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.bottom = "0px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+    }, 150);
+}
+
+function spawnExtraCats() {
+    for (let i = 0; i < 10; i++) {
+        const cat = document.createElement("div");
+        cat.className = "cat";
+        cat.style.left = Math.random() * 90 + "%";
+        cat.style.top = Math.random() * 70 + "%";
+        cat.style.animationDelay = Math.random() * 2 + "s";
+        cat.innerHTML = `
+            <div class="eyes">
+                <div class="eye"></div><div class="eye"></div>
+            </div>`;
+        document.body.appendChild(cat);
+    }
+}
+</script>
+
+</body>
+</html>
