@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>💖 Dla Ciebie 💖</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    background: linear-gradient(#ff9ecf, #ffe4e1);
+    overflow: hidden;
+  }h1 { margin-top: 40px; color: white; text-shadow: 2px 2px 15px hotpink; }
+
+button { padding: 15px 25px; font-size: 18px; border: none; border-radius: 20px; background: #ff4da6; color: white; cursor: pointer; margin-top: 30px; }
+
+button:hover { background: #ff1493; }
+
+#message { margin-top: 30px; font-size: 30px; color: white; text-shadow: 2px 2px 15px #ff1493; }
+
+.heart { position: absolute; font-size: 30px; animation: float 3s linear forwards; }
+
+@keyframes float { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-200px); opacity: 0; } } </style>
+
+</head>
+<body><h1>Mam coś bardzo ważnego dla Ciebie 💌</h1>
+<button onclick="showLove()">Kliknij mnie 💖</button>
+<div id="message"></div><script>
+function showLove() {
+  const msg = document.getElementById("message");
+
+  let texts = [
+    "Chciałem Ci coś powiedzieć... 💭",
+    "Jesteś dla mnie bardzo ważna 💕",
+    "Myślę o Tobie cały czas 🥺",
+    "I jest jeszcze jedna rzecz...",
+    "Kocham Cię tak bardzooo bardzoooo 💖"
+  ];
+
+  let i = 0;
+
+  let interval = setInterval(() => {
+    msg.innerText = texts[i];
+    createHearts();
+    i++;
+
+    if (i >= texts.length) {
+      clearInterval(interval);
+    }
+  }, 2000);
+}
+
+function createHearts() {
+  for (let i = 0; i < 10; i++) {
+    let heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = "💖";
+
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = Math.random() * window.innerHeight + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 3500);
+  }
+}
+</script></body>
+</html>>
